@@ -1,50 +1,57 @@
 import java.util.Scanner;
 
-class BankAcc{
+class BankAcc {
     private double bal;
-    BankAcc(){
+
+    BankAcc() {
         bal = 1000;
     }
-    public void deposite(double amount){
+
+    public void deposite(double amount) {
         bal += amount;
     }
-    public void withdraw(double amount){
-        bal-= amount;
+
+    public void withdraw(double amount) {
+        bal -= amount;
     }
-    public void printBal(){
+
+    public void printBal() {
         System.out.println(this.bal);
     }
 }
 
-class student extends BankAcc{
+class student extends BankAcc {
     private int ID;
     private int grade;
     private String name;
-    student(){
+
+    student() {
         ID = -1;
         grade = -1;
         name = "NULL";
     }
-    student(int id, int g, String n){
+
+    student(int id, int g, String n) {
         ID = id;
         grade = g;
         name = n;
     }
 
-    public void setGrade(int g){
+    public void setGrade(int g) {
         grade = g;
     }
-    public void printGrade(){
-        System.out.println("Grade: "+ this.grade);
+
+    public void printGrade() {
+        System.out.println("Grade: " + this.grade);
     }
-    public void printName(){
+
+    public void printName() {
         System.out.println(this.name);
     }
 }
 
-
-public class OOP{
-    public static void main (String[] args){
+public class OOP {
+    public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
 
@@ -59,7 +66,6 @@ public class OOP{
         s1.printGrade();
         s1.printName();
 
-
         BankAcc a = new BankAcc();
         a.deposite(585);
         a.printBal();
@@ -70,15 +76,6 @@ public class OOP{
         s.printBal();
         s.printGrade();
         s.printName();
-
-
-
-
-
-
-
-
-
 
     }
 }
