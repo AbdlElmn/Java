@@ -39,15 +39,22 @@ public class Main {
         ArrayADT.display(array);
 
         System.out.println("Do you want to append a number to the array? (yes/no)");
-        char choice = input.next().toLowerCase().charAt(0);
-        if (choice == 'y') {
+        char choiceForAppend = input.next().toLowerCase().charAt(0);
+        if (choiceForAppend == 'y') {
             ArrayADT.Append(array);
             ArrayADT.display(array);
-        }
-
-        else
+        } else
             System.out.println("Done. BYE!");
 
+        System.out.println("Array size: " + array.size);
+        System.out.println("Array length: " + array.length);
+        System.out.println("Do you want to insert a number to the array? (yes/no)");
+        char choiceForInsert = input.next().toLowerCase().charAt(0);
+        if (choiceForInsert == 'y') {
+            ArrayADT.insert(array);
+            ArrayADT.display(array);
+        } else
+            System.out.println("Done. BYE!");
         input.close();
     }
 

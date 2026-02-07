@@ -9,6 +9,7 @@ public class ArrayADT {
     int size;
     int length;
 
+    // display elements in the array
     static void display(ArrayADT array) {
         System.out.println("Elements in the Array:");
         for (int i = 0; i < array.length; i++) {
@@ -16,6 +17,7 @@ public class ArrayADT {
         }
     }
 
+    // appen to array
     static void Append(ArrayADT array) {
 
         int emptySpace = array.size - array.length;
@@ -43,4 +45,29 @@ public class ArrayADT {
         }
 
     }
+
+    // insert an element at a certain index
+
+    static void insert(ArrayADT array) {
+        if (array.length == array.size) {
+            System.out.println("The array is full. cannot insert any element.");
+            return;
+        } else {
+            System.out.println("Enter the index you want to insert at: ");
+            int index = input.nextInt();
+            while (index < 0 || index > array.length) {
+                System.out.println("Please enter a valid index: ");
+                index = input.nextInt();
+            }
+            System.out.println("Enter the number: ");
+            int number = input.nextInt();
+
+            for (int i = array.length; i > index; i--) {
+                array.Array[i] = array.Array[i - 1];
+            }
+            array.Array[index] = number;
+            array.length++;
+        }
+    }
+
 }
