@@ -13,7 +13,7 @@ public class ArrayADT {
     static void display(ArrayADT array) {
         System.out.println("Elements in the Array:");
         for (int i = 0; i < array.length; i++) {
-            System.out.println((i + 1) + " -> " + array.Array[i]);
+            System.out.println("Index " + (i) + " -> " + array.Array[i]);
         }
     }
 
@@ -62,12 +62,34 @@ public class ArrayADT {
             System.out.println("Enter the number: ");
             int number = input.nextInt();
 
-            for (int i = array.length; i > index; i--) {
+            for (int i = array.length; i > index; i--)
                 array.Array[i] = array.Array[i - 1];
-            }
+
             array.Array[index] = number;
             array.length++;
         }
+    }
+
+    // deleting from array at a certain index
+    static void delete(ArrayADT array) {
+        if (array.length == 0) {
+            System.out.println("The array is empty");
+            return;
+        } else {
+            System.out.println("Elements in the array: ");
+            ArrayADT.display(array);
+
+            System.out.println("Which index you want to delete from?");
+            int index = input.nextInt();
+            while (index < 0 || index >= array.length) {
+                System.out.println("Please enter a valid index: ");
+                index = input.nextInt();
+            }
+            for (int i = index; i < array.length - 1; i++)
+                array.Array[i] = array.Array[i + 1];
+            array.length--;
+        }
+
     }
 
 }
