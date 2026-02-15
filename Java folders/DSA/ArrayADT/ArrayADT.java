@@ -92,4 +92,17 @@ public class ArrayADT {
 
     }
 
+    // performing linear search in array
+
+    static void linearSearch(ArrayADT array, int key) {
+        boolean found = false;
+        for (int i = 0; i < array.length; i++) {
+            if (key == array.Array[i])
+                System.out.println("The key has been found at index: " + i);
+            return;
+        }
+        if (!found)
+            System.out.println("Key is not found.");
+    }
+
 }

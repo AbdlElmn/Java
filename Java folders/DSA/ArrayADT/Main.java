@@ -81,6 +81,21 @@ public class Main {
             ArrayADT.display(array);
         } else
             System.out.println("Done. BYE!");
+
+
+        //Linear search
+        System.out.println("Enter the key you are looking for: ");
+        int key = input.nextInt();
+        ArrayADT.linearSearch(array, key);
+
+
+
+
+
+
+
+
+
         input.close();
     }
 
