@@ -40,12 +40,13 @@ public class Main {
         list.insertAtindex(n, index);
         list.Display();
 
-        //Number elements in the list
-
+        // Number elements in the list
         System.out.println("Number of elements in the list: ");
         list.count();
 
-        
+        // Sum elements in the list
+        System.out.println("Sum of elements in the list: ");
+        list.sum();
 
 
     }

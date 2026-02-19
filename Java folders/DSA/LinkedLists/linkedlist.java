@@ -65,5 +65,15 @@ public class linkedlist {
         return count;
     }
 
-    
+    public int sum(){
+        int sum = 0;
+        Node temp = head;
+
+        while (temp != null){
+            sum += temp.data;
+            temp = temp.next;
+        }
+
+        return sum;
+    }
 }
