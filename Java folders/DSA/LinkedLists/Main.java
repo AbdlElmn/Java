@@ -12,14 +12,32 @@ public class Main {
         System.out.println("How many numbers you want to insert?");
         int nums = input.nextInt();
 
-        System.out.println("Insertion:");
-
+        // insert at begining
+        System.out.println("Insertion at begininng:");
         for (int i = 0; i < nums; i++) {
             System.out.print("Enter number: ");
             int value = input.nextInt();
             list.insertAtBegining(value);
         }
-        System.out.println("List contents:");
+        System.out.println("List:");
+        list.Display();
+
+        // insert at end
+        System.out.println("");
+        System.out.println("Insertion at end:");
+        System.out.println("Enter the number you want to insert: ");
+        int num = input.nextInt();
+        list.insertAtEnd(num);
+        list.Display();
+
+        // insert at index
+        System.out.println("");
+        System.out.println("Insertion at index:");
+        System.out.println("Enter the number you want to insert: ");
+        int n = input.nextInt();
+        System.out.println("Enter the index: ");
+        int index = input.nextInt();
+        list.insertAtindex(n, index);
         list.Display();
 
     }
