@@ -40,5 +40,13 @@ public class Main {
         list.insertAtindex(n, index);
         list.Display();
 
+        //Number elements in the list
+
+        System.out.println("Number of elements in the list: ");
+        list.count();
+
+        
+
+
     }
 }

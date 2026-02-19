@@ -7,7 +7,7 @@ public class linkedlist {
         Node temp = head;
         System.out.print("Head -> ");
         while (temp != null) {
-            System.out.print("[ " + temp.data + " | * ] -> ");
+            System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
     }
@@ -51,4 +51,19 @@ public class linkedlist {
         temp.next = newNode;
 
     }
+
+    public int count() {
+
+        int count = 0;
+        Node temp = head;
+
+        while (temp != null) {
+            count++;
+            temp = temp.next;
+        }
+
+        return count;
+    }
+
+    
 }
