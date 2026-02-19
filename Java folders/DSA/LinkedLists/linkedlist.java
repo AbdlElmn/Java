@@ -96,7 +96,6 @@ public class linkedlist {
     }
 
     public boolean search(int key) {
-
         Node temp = head;
 
         while (temp != null) {
@@ -108,6 +107,44 @@ public class linkedlist {
         }
 
         return false;
+    }
+
+    public void sortedInsertASC(int data){
+        Node newNode = new Node(data);
+
+        if (head == null || data < head.data){
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+
+        Node temp = head;
+        while(temp.next != null && temp.next.data < data){
+            temp = temp.next;
+        }
+
+        newNode.next = temp.next;
+        temp.next = newNode;
+
+    }
+
+    public void sortedInsertDESC(int data){
+        Node newNode = new Node(data);
+
+        if (head == null || data > head.data){
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+
+        Node temp = head;
+        while(temp.next != null && temp.next.data > data){
+            temp = temp.next;
+        }
+
+        newNode.next = temp.next;
+        temp.next = newNode;
+
     }
 
 }

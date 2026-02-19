@@ -55,11 +55,22 @@ public class Main {
         // Searching for a number in the list
         System.out.println("Enter the number you are looking for ");
         int key = input.nextInt();
-
         if (list.search(key))
             System.out.println("Found");
         else
             System.out.println("Not Found");
+
+        // ACS insert in sorted array
+        System.out.println("Enter the number: ");
+        int ascNum = input.nextInt();
+        list.sortedInsertASC(ascNum);
+        list.Display();
+
+        // DECS insert in sorted array
+        System.out.println("Enter the number: ");
+        int descNum = input.nextInt();
+        list.sortedInsertDESC(descNum);
+        list.Display();
 
     }
 }
