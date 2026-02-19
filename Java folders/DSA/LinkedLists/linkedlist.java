@@ -65,15 +65,49 @@ public class linkedlist {
         return count;
     }
 
-    public int sum(){
+    public int sum() {
         int sum = 0;
         Node temp = head;
 
-        while (temp != null){
+        while (temp != null) {
             sum += temp.data;
             temp = temp.next;
         }
 
         return sum;
     }
+
+    public int max() {
+        if (head == null) {
+            System.out.println("List is empty");
+        }
+
+        int max = head.data;
+        Node temp = head.next;
+
+        while (temp != null) {
+            if (temp.data > max)
+                max = temp.data;
+
+            temp = temp.next;
+        }
+
+        return max;
+    }
+
+    public boolean search(int key) {
+
+        Node temp = head;
+
+        while (temp != null) {
+
+            if (key == temp.data)
+                return true;
+
+            temp = temp.next;
+        }
+
+        return false;
+    }
+
 }

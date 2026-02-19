@@ -46,8 +46,20 @@ public class Main {
 
         // Sum elements in the list
         System.out.println("Sum of elements in the list: ");
-        list.sum();
+        System.out.println(list.sum());
 
+        // Max number in the list
+        System.out.println("Max element in the list: ");
+        System.out.println(list.max());
+
+        // Searching for a number in the list
+        System.out.println("Enter the number you are looking for ");
+        int key = input.nextInt();
+
+        if (list.search(key))
+            System.out.println("Found");
+        else
+            System.out.println("Not Found");
 
     }
 }
