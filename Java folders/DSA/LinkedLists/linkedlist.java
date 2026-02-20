@@ -131,7 +131,7 @@ public class linkedlist {
     public void sortASC() {
 
         if (head == null || head.next == null) {
-            return; // already sorted
+            return;
         }
 
         Node current;
@@ -173,7 +173,7 @@ public class linkedlist {
     public void sortDESC() {
 
         if (head == null || head.next == null) {
-            return; // already sorted
+            return;
         }
 
         Node current;
@@ -216,14 +216,6 @@ public class linkedlist {
             return;
         }
         temp.next = temp.next.next;
-
-    }
-
-    public void deleteFirst() {
-
-    }
-
-    public void deleteLast() {
 
     }
 
