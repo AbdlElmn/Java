@@ -41,18 +41,23 @@ public class Main {
         list.Display();
 
         // Number elements in the list
+        System.out.println("");
         System.out.println("Number of elements in the list: ");
-        list.count();
+        System.out.println(list.count());
 
         // Sum elements in the list
+        System.out.println("");
         System.out.println("Sum of elements in the list: ");
         System.out.println(list.sum());
 
         // Max number in the list
+        System.out.println("");
         System.out.println("Max element in the list: ");
         System.out.println(list.max());
 
         // Searching for a number in the list
+        System.out.println("");
+
         System.out.println("Enter the number you are looking for ");
         int key = input.nextInt();
         if (list.search(key))
@@ -61,15 +66,25 @@ public class Main {
             System.out.println("Not Found");
 
         // ACS insert in sorted array
+        System.out.println("ACS insert in sorted array");
         System.out.println("Enter the number: ");
         int ascNum = input.nextInt();
+        list.sortASC();
         list.sortedInsertASC(ascNum);
         list.Display();
 
         // DECS insert in sorted array
+        System.out.println("DECS insert in sorted array");
         System.out.println("Enter the number: ");
         int descNum = input.nextInt();
+        list.sortDESC();
         list.sortedInsertDESC(descNum);
+        list.Display();
+
+        // Delet by value
+        System.out.println("Enter the number you want to delete: ");
+        int value = input.nextInt();
+        list.deleteByValue(value);
         list.Display();
 
     }

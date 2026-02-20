@@ -109,17 +109,17 @@ public class linkedlist {
         return false;
     }
 
-    public void sortedInsertASC(int data){
+    public void sortedInsertASC(int data) {
         Node newNode = new Node(data);
 
-        if (head == null || data < head.data){
+        if (head == null || data < head.data) {
             newNode.next = head;
             head = newNode;
             return;
         }
 
         Node temp = head;
-        while(temp.next != null && temp.next.data < data){
+        while (temp.next != null && temp.next.data < data) {
             temp = temp.next;
         }
 
@@ -128,22 +128,102 @@ public class linkedlist {
 
     }
 
-    public void sortedInsertDESC(int data){
+    public void sortASC() {
+
+        if (head == null || head.next == null) {
+            return; // already sorted
+        }
+
+        Node current;
+        Node index;
+        int temp;
+
+        for (current = head; current != null; current = current.next) {
+
+            for (index = current.next; index != null; index = index.next) {
+
+                if (current.data > index.data) {
+                    temp = current.data;
+                    current.data = index.data;
+                    index.data = temp;
+                }
+            }
+        }
+    }
+
+    public void sortedInsertDESC(int data) {
         Node newNode = new Node(data);
 
-        if (head == null || data > head.data){
+        if (head == null || data > head.data) {
             newNode.next = head;
             head = newNode;
             return;
         }
 
         Node temp = head;
-        while(temp.next != null && temp.next.data > data){
+        while (temp.next != null && temp.next.data > data) {
             temp = temp.next;
         }
 
         newNode.next = temp.next;
         temp.next = newNode;
+
+    }
+
+    public void sortDESC() {
+
+        if (head == null || head.next == null) {
+            return; // already sorted
+        }
+
+        Node current;
+        Node index;
+        int temp;
+
+        for (current = head; current != null; current = current.next) {
+
+            for (index = current.next; index != null; index = index.next) {
+
+                if (current.data < index.data) {
+                    temp = current.data;
+                    current.data = index.data;
+                    index.data = temp;
+                }
+            }
+        }
+    }
+
+    public void deleteByValue(int value) {
+
+        if (head == null) {
+            System.out.println("List is empty.");
+            return;
+        }
+
+        if (head.data == value) {
+            head = head.next;
+            return;
+        }
+
+        Node temp = head;
+
+        while (temp.next.data != value && temp.next != null) {
+            temp = temp.next;
+
+        }
+        if (temp.next == null) {
+            System.out.println("Value not found.");
+            return;
+        }
+        temp.next = temp.next.next;
+
+    }
+
+    public void deleteFirst() {
+
+    }
+
+    public void deleteLast() {
 
     }
 
