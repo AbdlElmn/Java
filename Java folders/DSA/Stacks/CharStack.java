@@ -1,14 +1,14 @@
 package Stacks;
 
-public class StackArray {
-    private int[] stack;
-    private char[] Stack;
+public class CharStack {
+
+    private char[] stack;
     private int size;
     private int top;
 
-    public StackArray(int s) {
+    public CharStack(int s) {
         this.size = s;
-        stack = new int[size];
+        stack = new char[size];
         top = -1;
     }
 
@@ -20,26 +20,25 @@ public class StackArray {
         return top == size - 1;
     }
 
-    public void push(int n) {
+    public void push(char c) {
         if (isFull()) {
             System.err.println("Stack is full");
             return;
         }
-        stack[++top] = n;
+        stack[++top] = c;
     }
 
-    public int pop() {
+    public char pop() {
         if (isEmpty()) {
             System.err.println("Stack is Empty");
-            return -1;
+            return '-';
         }
         return stack[top--];
     }
 
-    public int peek() {
+    public char peek() {
         if (isEmpty()) {
-            System.out.println("Stack is empty!");
-            return -1;
+            return '-';
         }
         return stack[top];
     }
@@ -54,5 +53,4 @@ public class StackArray {
             System.out.println(stack[i]);
         }
     }
-
 }
