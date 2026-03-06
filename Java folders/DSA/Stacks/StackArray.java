@@ -2,7 +2,6 @@ package Stacks;
 
 public class StackArray {
     private int[] stack;
-    private char[] Stack;
     private int size;
     private int top;
 
